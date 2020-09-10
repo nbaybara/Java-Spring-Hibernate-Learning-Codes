@@ -17,6 +17,7 @@
 	<!-- Step 3: Add support for component scanning -->
 	<context:component-scan base-package="com.nur.springdemo" />
 	<util:properties id="countryOptions" location="classpath:../countries.properties"></util:properties>
+	
 
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
@@ -28,7 +29,11 @@
 		<property name="suffix" value=".jsp" />
 		
 	</bean>
-
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" value="resources/messages"/>
+	</bean>
 </beans>
 
 
